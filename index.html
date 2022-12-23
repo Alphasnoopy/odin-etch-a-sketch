@@ -3,29 +3,39 @@
     <head>
         <meta charset="utf-8">
         <title>Etch-a-Sketch</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&amp;family=Montserrat:wght@400;700&amp;display=swap">
     </head>
 
     <body>
-        <header>
-            <p>Etch-a-Sketch</p>
-            <div>
-                <label for="cellInput">Enter # of cells</label>
-                <input type="text" id="cellInput">
-                <button>Enter</button>
-            </div>
-        </header>
-
         <main>
-            <div>
-                <i class="las la-random"></i>
-                <input type="color">
-                <label class="switch">
-                    <input type="checkbox" id="togBtn">
-                    <div class="slider round"></div>
-                </label>
-                <button id="rainbow">Rainbow</button>
+            <div id="outerBox">
+                <div id="topBox">
+                    <div id="title">
+                        <span id="name">Etch-A-Sketch</span>
+                    </div>
+                </div>
+                <div id="innerBox">
+                    <div id="canvas"></div>
+                </div>
+                <div id="bottomBox">
+                    <div id="knobLeft" class="knob"></div>
+                    <div id="controls">
+                        <div id="buttons">
+                            <input id="colorPicker" type="color">
+                            <button id="black"><span class="text">Black</span></button>
+                            <button id="shade"><span class="text">Shade</span></button>
+                            <button id="rainbow"><span class="text">Rainbow</span></button>
+                            <button id="reset"><span class="text">Reset</span></button>
+                        </div>
+                        <div id="sliderControls">
+                            <input type="range" min="10" max="100" value="55" id="slider">
+                            <label for="slider">55</label>
+                        </div>
+                    </div>
+                    <div id="knobRight" class="knob"></div>
+                </div>
             </div>
-            <div class="sketchBox"></div>
         </main>
     </body>
 </html>
