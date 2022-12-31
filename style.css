@@ -12,7 +12,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 650px;
+  height: 800px;
   width: 800px;
   background-color: rgb(190, 4, 4);
   border-radius: 20px;
@@ -21,7 +21,7 @@ html {
 }
 
 #title {
-  margin-top: 15px;
+  margin-top: 30px;
   
 }
 
@@ -45,16 +45,23 @@ html {
 
 
 #canvas {
-  height: 430px;
-  width: 560px;
+  height: 550px;
+  width: 550px;
   background-color: rgb(206, 201, 201);
   border-radius: 1em;
   box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5),
               -2px -2px 2px 2px rgba(0, 0, 0, 0.5);
   display: grid;
-  grid-gap: 1px;
   grid-template-rows: repeat(var(--grid-size), auto);
   grid-template-columns: repeat(var(--grid-size), auto);
+}
+
+#canvas div:first-child {
+  border-top-left-radius: 1em;
+}
+
+#canvas div:last-child {
+  border-bottom-right-radius: 1em;
 }
 
 #bottomBox {
@@ -110,7 +117,7 @@ button {
 
 #slider {
   margin-bottom: 20px;
-  width: 500px;
+  width: 400px;
   -webkit-appearance: none;
   border-radius: 4px;
 }
@@ -138,6 +145,10 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 label {
+  display:inline-block;
+  height: 27px;
+  width: 30px;
+  text-align: center;
   font-size: 20px;
   font-family: 'Lobster', cursive;
   background-color: gold;
