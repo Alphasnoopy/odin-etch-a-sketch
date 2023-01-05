@@ -13,6 +13,7 @@ function colorChange(e){
 function createGrid(){
     let bottom_Left;
     let top_Right;
+    let pixel_List;
     let grid_Diff = 0;
     const gridSize = Number(slider.value);
     canvas.style.setProperty('--grid-size', gridSize);
@@ -20,9 +21,13 @@ function createGrid(){
     if (corner_List.length > 0) {
         bottom_Left = document.getElementById(String(corner_List.pop()));
         top_Right = document.getElementById(String(corner_List.pop()));
+        pixel_List = document.querySelectorAll(".pixel");
 
         top_Right.style.removeProperty('border-top-right-radius');
         bottom_Left.style.removeProperty('border-bottom-left-radius');
+        pixel_List.forEach(pixel => {
+            pixel.style.backgroundColor = "rgb(206, 201, 201)";
+        });
     }
 
     corner_List.push(gridSize, Math.pow(gridSize, 2) - gridSize + 1);
