@@ -35,11 +35,6 @@ function colorChange(e){
             let blue_Color = Math.random() * 255;
             e.target.style.backgroundColor = `rgb(${red_Color}, ${green_Color}, ${blue_Color})`;
             break;
-        case "clear":
-            clearCanvas();
-            const page = document.documentElement;
-            page.style.animation = 'shake 0.3s';
-            break;
         default:
             e.target.style.backgroundColor = document.getElementById("colorPicker").value;
     }
@@ -90,6 +85,20 @@ function createGrid(){
     curr_Size = gridSize;
 }
 
+function sleep(ms) {
+    return new Promise ((resolve) => {
+        setTimeout(resolve, ms)
+    });
+}
+
+async function shakeCanvas(){
+    const page = document.documentElement;
+    page.classList.add('shaking');
+    await sleep(300);
+    page.classList.remove('shaking');
+    clearCanvas();
+}
+
 function sketchStart() {
     createGrid();
     slider.addEventListener("input", () => {
@@ -99,7 +108,12 @@ function sketchStart() {
     slider.addEventListener("change", createGrid);
     buttons.forEach(button => {
         button.addEventListener('mousedown', () => {
-            color_Style = button.id;
+            if (button.id === "clear") { 
+                shakeCanvas();
+            }
+            else {
+                color_Style = button.id;
+            }
         })
     })
 }
