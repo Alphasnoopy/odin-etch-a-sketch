@@ -8,6 +8,15 @@ let div_Num = 1;
 let corner_List = [];
 let color_Style = "";
 
+function clearCanvas(){
+    let pixel_List;
+    pixel_List = document.querySelectorAll(".pixel");
+
+    pixel_List.forEach(pixel => {
+        pixel.style.backgroundColor = "rgb(206, 201, 201)";
+    });
+}
+
 function colorChange(e){
     switch(color_Style) {
         case "black":
@@ -26,6 +35,11 @@ function colorChange(e){
             let blue_Color = Math.random() * 255;
             e.target.style.backgroundColor = `rgb(${red_Color}, ${green_Color}, ${blue_Color})`;
             break;
+        case "clear":
+            clearCanvas();
+            const page = document.documentElement;
+            page.style.animation = 'shake 0.3s';
+            break;
         default:
             e.target.style.backgroundColor = document.getElementById("colorPicker").value;
     }
@@ -34,7 +48,6 @@ function colorChange(e){
 function createGrid(){
     let bottom_Left;
     let top_Right;
-    let pixel_List;
     let grid_Diff = 0;
     const gridSize = Number(slider.value);
     canvas.style.setProperty('--grid-size', gridSize);
@@ -42,13 +55,10 @@ function createGrid(){
     if (corner_List.length > 0) {
         bottom_Left = document.getElementById(String(corner_List.pop()));
         top_Right = document.getElementById(String(corner_List.pop()));
-        pixel_List = document.querySelectorAll(".pixel");
 
         top_Right.style.removeProperty('border-top-right-radius');
         bottom_Left.style.removeProperty('border-bottom-left-radius');
-        pixel_List.forEach(pixel => {
-            pixel.style.backgroundColor = "rgb(206, 201, 201)";
-        });
+        clearCanvas();
     }
 
     corner_List.push(gridSize, Math.pow(gridSize, 2) - gridSize + 1);
