@@ -36,7 +36,7 @@ html {
 }
 
 #name::before, #name::after {
-  content: 'Etch-A-Sketch';
+  content: 'Hover-A-Sketch';
   position: absolute;
   z-index: -1;
 }
