@@ -3,6 +3,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 450px;
   height: 100%;
   background-color: rgb(4, 62, 187);
 }
@@ -163,3 +164,16 @@ label {
               inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+@keyframes shake {
+  0% { align-items: flex-start; }
+  10% { align-items: flex-end; }
+  20% { align-items: flex-start; }
+  30% { align-items: flex-end; }
+  40% { align-items: flex-start; }
+  50% { align-items: flex-end; }
+  60% { align-items: flex-start; }
+  70% { align-items: flex-end; }
+  80% { align-items: flex-start; }
+  90% { align-items: flex-end; }
+  100% { align-items: center; }
+}
