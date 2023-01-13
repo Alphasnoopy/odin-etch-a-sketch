@@ -164,6 +164,10 @@ label {
               inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+.shaking {
+  animation: shake 0.3s;
+}
+
 @keyframes shake {
   0% { align-items: flex-start; }
   10% { align-items: flex-end; }
