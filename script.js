@@ -92,7 +92,7 @@ function sleep(ms) {
 }
 
 async function shakeCanvas(){
-    const page = document.documentElement;
+    const page = document.getElementsByTagName("main")[0];
     page.classList.add('shaking');
     await sleep(300);
     page.classList.remove('shaking');
