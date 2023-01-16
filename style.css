@@ -1,11 +1,20 @@
-html {
+html, body {
+  height: 100%;
+}
+
+body {
   display: flex;
+  flex-direction: column;
+  background-color: rgb(4, 62, 187);
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 450px;
-  height: 100%;
-  background-color: rgb(4, 62, 187);
 }
 
 #outerBox {
@@ -162,6 +171,15 @@ label {
   padding: 1px 3px;
   box-shadow: inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5),
               inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 0;
+  color: white
 }
 
 .shaking {
